@@ -12,15 +12,38 @@
     "@types/react-dom": "^17.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "react-scripts": "^4.0.3",
+    "prettier": "^2.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "lint-staged": "^10.5.4",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended": "^4.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "typescript": "^4.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint": "eslint --ext js,ts,tsx",
+    "lint": "yarn run eslint src",
+    "lint:fix": "yarn run eslint --fix src",
+    "lint:css": "stylelint src/**/*.css"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run eslint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
   },
   "eslintConfig": {
     "extends": [
