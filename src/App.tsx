@@ -24,7 +24,6 @@ function App() {
         </div>
       </StyledApp>
     </Router>
-
   );
 }
 
