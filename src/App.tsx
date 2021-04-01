@@ -1,12 +1,14 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import DashBoard from './modules/dashboard';
+import Routes from './routes';
 
 function App() {
   return (
-    <Router>
-      <DashBoard text="Welcome to Cinema World" />
-    </Router>
+    <>
+      <Router>
+        <Routes />
+      </Router>
+    </>
   );
 }
 
