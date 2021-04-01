@@ -4,9 +4,11 @@ import Routes from './routes';
 
 function App() {
   return (
-    <Router>
-      <Routes />
-    </Router>
+    <>
+      <Router>
+        <Routes />
+      </Router>
+    </>
   );
 }
 
