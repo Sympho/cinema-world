@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
+import { Wrapper } from './StyledComponents';
+
 const Home: FC = () => {
-  return (
-    <>
-      Home Page
-    </>
-  )
+  return <Wrapper>Home Page</Wrapper>;
 };
 
 export default Home;
