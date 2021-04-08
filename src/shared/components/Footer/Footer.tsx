@@ -3,7 +3,9 @@ import { Container, Wrapper } from './StyledComponents';
 const Footer = () => {
   return (
     <Wrapper>
-      <Container>best programmers</Container>
+      <Container>
+        <p>2021 &copy; Best programmers</p>
+      </Container>
     </Wrapper>
   );
 };
