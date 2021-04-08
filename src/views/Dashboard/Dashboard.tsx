@@ -7,6 +7,7 @@ const DashBoard: FC<DashBoardProps> = ({ text }) => {
   return (
     <Container>
       <Main>
+        <h1>Dashboard</h1>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
         blanditiis doloremque ea eos error ex ,impedit iste labore magnam minus
         nostrum officia, omnis quasi quibusdam reiciendis rerum sint ut
