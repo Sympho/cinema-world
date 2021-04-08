@@ -1,49 +1,73 @@
 import { FC } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+import App from 'App';
 import NotFound from 'views/NotFound';
 import { availableLangs, defaultLang } from 'shared/constants/locales';
-import { publicRoutes } from './publicRoutes';
 
+import { publicRoutes, authRoutes, profileRoutes } from './routes';
+import { IRoute, RouterProps } from './types';
+
+const loginPath = authRoutes[0].path;
+const profPath = profileRoutes[0].path;
 const langPath = `:lang(${availableLangs.join('|')})`; //[a-z]{2}
 
-interface RouterProps {
-  app: FC;
-}
+const withLang = (path: string, lang?: string) => `/${lang || langPath}${path}`;
 
-const Router: FC<RouterProps> = ({ app: App }) => (
-  <BrowserRouter>
+// We use function because component doesn't render in Switch
+const renderRoutes = (
+  routes: IRoute[],
+  renderComponent: (Comp: FC) => any = (Comp: FC) => <Comp />,
+) => {
+  return routes.map(({ path, component: Component, ...params }) => (
+    <Route key={withLang(path)} path={withLang(path)} {...params}>
+      <App>{renderComponent(Component)}</App>
+    </Route>
+  ));
+};
+
+const Routes: FC<RouterProps> = ({ isAuth, lang }) => {
+  return (
     <Switch>
-      <Route path={`/${langPath}/`}>
-        <Switch>
-          {publicRoutes.map(({ path, component: Component, ...params }) => (
-            <Route
-              key={`/${langPath}${path}`}
-              path={`/${langPath}${path}`}
-              {...params}
-            >
-              <App>
-                <Component />
-              </App>
-            </Route>
-          ))}
+      {renderRoutes(publicRoutes)}
 
-          <Route path={`/${langPath}/*`} exact>
-            {/*<Redirect to={`/${defaultLang}/`} />*/}
-            <NotFound />
-          </Route>
-        </Switch>
-      </Route>
-      <Route path="/" exact>
-        <Redirect to={`/${defaultLang}/`} />
-      </Route>
+      {renderRoutes(profileRoutes, Comp => {
+        return isAuth ? <Comp /> : <Redirect to={withLang(loginPath, lang)} />;
+      })}
+      {renderRoutes(authRoutes, Comp => {
+        return !isAuth ? <Comp /> : <Redirect to={withLang(profPath, lang)} />;
+      })}
 
-      <Route path="*">
-        {/*<Redirect to={`/${defaultLang}/`} />*/}
+      <Route path={withLang('/*')} exact>
         <NotFound />
       </Route>
     </Switch>
-  </BrowserRouter>
-);
+  );
+};
+
+const Router: FC<RouterProps> = ({ isAuth }) => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route
+          path={withLang('/')}
+          render={({
+            match: {
+              params: { lang },
+            },
+          }) => <Routes isAuth={isAuth} lang={lang} />}
+        />
+
+        <Route path="/" exact>
+          <Redirect to={`/${defaultLang}/`} />
+        </Route>
+
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 export default Router;
