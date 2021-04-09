@@ -11,30 +11,37 @@ export const publicRoutes: IRoute[] = [
     path: '/',
     component: Home,
   },
-  {
-    path: '/dashboard/',
-    component: DashBoard,
-  },
 ];
 
 export const authRoutes: IRoute[] = [
   {
-    path: '/auth/',
+    exact: true,
+    url: '/auth/',
+    path: '/:page(auth)/',
     component: Login,
   },
   {
-    path: '/auth/register/',
+    path: '/auth/:page(login)/',
+    component: Login,
+  },
+  {
+    path: '/auth/:page(register)/',
     component: Register,
   },
 ];
 
 export const profileRoutes: IRoute[] = [
   {
-    path: '/profile/',
+    url: '/profile/',
+    path: '/:page(profile)/',
     component: Profile,
   },
   {
-    path: '/profile/settings/',
+    path: '/:page(profile)/settings/',
     component: Profile,
+  },
+  {
+    path: '/:page(dashboard)/',
+    component: DashBoard,
   },
 ];
