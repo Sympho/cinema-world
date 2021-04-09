@@ -5,3 +5,8 @@ export interface IRoute {
   path: string;
   component: FC;
 }
+
+export interface RouterProps {
+  isAuth?: boolean;
+  lang?: string;
+}
