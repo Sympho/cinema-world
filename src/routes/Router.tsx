@@ -8,8 +8,8 @@ import { availableLangs, defaultLang } from 'shared/constants/locales';
 import { publicRoutes, authRoutes, profileRoutes } from './routes';
 import { IRoute, RouterProps } from './types';
 
-const loginPath = authRoutes[0].path;
-const profPath = profileRoutes[0].path;
+const loginUrl = authRoutes[0].url || '';
+const profUrl = profileRoutes[0].url || '';
 const langPath = `:lang(${availableLangs.join('|')})`; //[a-z]{2}
 
 const withLang = (path: string, lang?: string) => `/${lang || langPath}${path}`;
@@ -32,10 +32,10 @@ const Routes: FC<RouterProps> = ({ isAuth, lang }) => {
       {renderRoutes(publicRoutes)}
 
       {renderRoutes(profileRoutes, Comp => {
-        return isAuth ? <Comp /> : <Redirect to={withLang(loginPath, lang)} />;
+        return isAuth ? <Comp /> : <Redirect to={withLang(loginUrl, lang)} />;
       })}
       {renderRoutes(authRoutes, Comp => {
-        return !isAuth ? <Comp /> : <Redirect to={withLang(profPath, lang)} />;
+        return !isAuth ? <Comp /> : <Redirect to={withLang(profUrl, lang)} />;
       })}
 
       <Route path={withLang('/*')} exact>

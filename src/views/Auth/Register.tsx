@@ -6,7 +6,7 @@ const Register: FC = () => {
     <div>
       <h1>Register</h1>
       <p>
-        <Link to="/login/">login</Link>
+        <Link to="/auth/login/">login</Link>
         <Link to="/">Home</Link>
       </p>
     </div>
