@@ -1,7 +1,9 @@
 import { FC } from 'react';
 
+import { StyledPage } from './styled';
+
 const Page: FC = ({ children }) => {
-  return <div>{children}</div>;
+  return <StyledPage>{children}</StyledPage>;
 };
 
 export default Page;
