@@ -1,8 +1,11 @@
 import { StrictMode, useState, FC } from 'react';
 import { render } from 'react-dom';
-import 'assets/css/index.css';
+import { RecoilRoot } from 'recoil';
+
 import Router from 'routes/Router';
 import { AuthContext } from 'shared/contexts/auth';
+
+import 'assets/css/index.css';
 
 const Root: FC = () => {
   const [isAuth, setAuth] = useState<string | boolean>(false);
@@ -16,7 +19,9 @@ const Root: FC = () => {
 
 render(
   <StrictMode>
-    <Root />
+    <RecoilRoot>
+      <Root />
+    </RecoilRoot>
   </StrictMode>,
   document.getElementById('root'),
 );
