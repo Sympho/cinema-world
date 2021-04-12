@@ -1,0 +1,12 @@
+{
+  "allow": ["run", "net", "read", "plugin"],
+  "scripts": {
+    "start": {
+      "cmd": "deno run server/index.ts",
+      "desc": "run my index.ts file"
+    }
+  },
+  "watcher": {
+    "match": ["server/**/*.*"]
+  }
+}

@@ -1,4 +1,4 @@
-import { Application } from './imports.ts';
+import { Application } from './deps.ts';
 
 const app = new Application();
 
@@ -11,7 +11,8 @@ app.use(async (ctx, next) => {
 
 // Hello World!
 app.use(ctx => {
-  ctx.response.body = 'Hello World!';
+  ctx.response.body = 'Hello World! 2';
+  console.log('>>');
 });
 
 await app.listen({ port: 5000 });
