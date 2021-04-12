@@ -42,7 +42,8 @@
     "eslint": "eslint --ext js,ts,tsx",
     "lint": "yarn run eslint src",
     "lint:fix": "yarn run eslint --fix src",
-    "lint:css": "stylelint src/**/*.css"
+    "lint:css": "stylelint src/**/*.css",
+    "serve": "deno run --inspect-brk --allow-plugin --allow-run --allow-read --allow-net server/index.ts"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
