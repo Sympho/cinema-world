@@ -1,4 +1,4 @@
-import { StrictMode, useState, FC } from 'react';
+import { StrictMode, FC } from 'react';
 import { render } from 'react-dom';
 import { RecoilRoot, useRecoilState } from 'recoil';
 
