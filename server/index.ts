@@ -1,4 +1,5 @@
 import { Application } from './deps.ts';
+import Router from './routes/Router.ts';
 
 const app = new Application();
 
@@ -9,10 +10,7 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.request.method} ${ctx.request.url} - ${rt}`);
 });
 
-// Hello World!
-app.use(ctx => {
-  ctx.response.body = 'Hello World! 2';
-  console.log('>>');
-});
+app.use(Router.routes());
+app.use(Router.allowedMethods());
 
 await app.listen({ port: 5000 });
