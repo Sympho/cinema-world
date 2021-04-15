@@ -1,4 +1,5 @@
-import { RouterContext, HTTPMethods } from '../deps.ts';
+import { RouterContext } from '../deps.ts';
+import AuthController from '../controllers/AuthController.ts';
 
 export interface Route {
   method: 'get' | 'patch' | 'post' | 'put' | 'delete';
@@ -16,25 +17,24 @@ export const routes: Route[] = [
   },
   {
     method: 'get',
+    path: '/users',
+    action: AuthController.getList,
+  },
+  {
+    method: 'get',
+    path: '/users/:id',
+    action: AuthController.getItem,
+  },
+  {
+    method: 'post',
+    path: '/users/create',
+    action: AuthController.createItem,
+  },
+  {
+    method: 'get',
     path: '/about',
     action: function ({ response }: RouterContext) {
       response.body = 'Hello about!';
-    },
-  },
-  {
-    method: 'get',
-    path: '/posts',
-    action: ({ response }: RouterContext) => {
-      response.body = [];
-    },
-  },
-  {
-    method: 'get',
-    path: '/posts/:id',
-    action: ({ params: { id }, response }: RouterContext) => {
-      response.body = {
-        id,
-      };
     },
   },
 ];
