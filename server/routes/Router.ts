@@ -1,5 +1,6 @@
 import { Router } from '../deps.ts';
-import { routes, Route } from './routes.ts';
+import { routes } from './routes.ts';
+import { Route } from './types.ts';
 
 const router = new Router();
 

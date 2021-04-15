@@ -19,6 +19,5 @@ class UserModel extends Model {
 }
 
 database.link([UserModel]);
-// database.sync();
 
 export default UserModel;

@@ -8,7 +8,7 @@ interface User {
   password?: string;
 }
 
-class AuthController {
+class UserController {
   public async getList({ response }: RouterContext) {
     const users: any = await UserModel.all();
 
@@ -16,8 +16,9 @@ class AuthController {
   }
 
   public async getItem({ params: { id }, response }: RouterContext) {
-    response.body =
-      typeof id === 'number' ? await UserModel.select('id').find(id) : {};
+    const { password = '', ...user } =
+      id && +id > 0 ? await UserModel.select('*').find(+id) : {};
+    response.body = user;
   }
 
   public async createItem({ request, response }: RouterContext) {
@@ -51,4 +52,4 @@ class AuthController {
   }
 }
 
-export default new AuthController();
+export default new UserController();
