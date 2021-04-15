@@ -1,5 +1,11 @@
 {
-  "allow": ["run", "net", "read", "plugin"],
+  "allow": {
+    "run": true,
+    "net": true,
+    "read": "server",
+    "write": "server",
+    "plugin": true
+  },
   "scripts": {
     "start": {
       "cmd": "deno run server/index.ts",

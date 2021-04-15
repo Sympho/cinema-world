@@ -1,4 +1,3 @@
-// @ts-ignore
 import {
   Application,
   Router,
@@ -6,9 +5,13 @@ import {
   HTTPMethods,
 } from 'https://deno.land/x/oak@v6.5.0/mod.ts';
 
-// @ts-ignore
-import { DB } from 'https://deno.land/x/sqlite@v2.4.0/mod.ts';
+import {
+  DataTypes,
+  Database,
+  Model,
+  SQLite3Connector,
+} from 'https://deno.land/x/denodb@v1.0.26/mod.ts';
 
-export { Application, Router, DB };
+export { Application, Router, Database, Model, DataTypes, SQLite3Connector };
 
 export type { RouterContext, HTTPMethods };
