@@ -19,6 +19,10 @@ Runs deno server using [denon](https://github.com/denosaurs/denon) for running s
 
 Listening on [http://localhost:5000](http://localhost:5000)
 
+### `yarn createTable %ModelName%`
+
+To create a new table in the database you should run `yarn createTable UserModel` (Be careful: this command drops table if it has been already created)
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\

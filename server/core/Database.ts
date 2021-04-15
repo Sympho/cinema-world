@@ -4,6 +4,4 @@ const connector = new SQLite3Connector({
   filepath: 'server/cinema.db',
 });
 
-const database = new Database({ connector, debug: true });
-
-export { database };
+export const database = new Database({ connector, debug: true });
