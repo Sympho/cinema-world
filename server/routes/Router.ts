@@ -2,7 +2,9 @@ import { Router } from '../deps.ts';
 import { routes } from './routes.ts';
 import { Route } from './types.ts';
 
-const router = new Router();
+const router = new Router({
+  prefix: '/api',
+});
 
 routes.forEach(({ method, path, action }: Route) => {
   // @ts-ignore
