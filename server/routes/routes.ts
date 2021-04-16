@@ -1,6 +1,7 @@
 import { RouterContext } from '../deps.ts';
 import UserController from '../controllers/UserController.ts';
 import { Route } from './types.ts';
+import { authRoutes } from './authRoutes.ts';
 
 export const routes: Route[] = [
   {
@@ -10,26 +11,5 @@ export const routes: Route[] = [
       response.body = 'Hello world!';
     },
   },
-  {
-    method: 'get',
-    path: '/users',
-    action: UserController.getList,
-  },
-  {
-    method: 'get',
-    path: '/users/:id',
-    action: UserController.getItem,
-  },
-  {
-    method: 'post',
-    path: '/users/create',
-    action: UserController.createItem,
-  },
-  {
-    method: 'get',
-    path: '/about',
-    action: function ({ response }: RouterContext) {
-      response.body = 'Hello about!';
-    },
-  },
+  ...authRoutes,
 ];
