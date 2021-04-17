@@ -5,6 +5,7 @@ import Link from 'shared/components/Link';
 // import { movieState } from 'store/atoms';
 import { filteredTodoListState } from 'store/selectors';
 import MovieSection from './components/MovieSection';
+import FilteredSection from './components/FilteredSection';
 import { Wrapper, Title, MovieContainer } from './StyledComponents';
 import { MovieType } from 'store/types';
 
@@ -16,6 +17,8 @@ const Home: FC = () => {
       <Title>Home Page</Title>
 
       <Link to="/dashboard">Going to Dashboard</Link>
+
+      <FilteredSection />
 
       <MovieContainer>
         {movieList.map((movieItem, id) => (
