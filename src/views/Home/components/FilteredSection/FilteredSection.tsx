@@ -1,10 +1,10 @@
-import { ChangeEvent } from 'react';
+import { FC, ChangeEvent } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { movieFilterState } from 'store/atoms';
-import { FilteredContainer } from './styled';
+import { FilteredContainer, FilterTitle, FilterSubTitle } from './styled';
 
-const FilteredSection = () => {
+const FilteredSection: FC = () => {
   const [filter, setFilter] = useRecoilState(movieFilterState);
   console.log('filter', filter);
 
@@ -14,7 +14,9 @@ const FilteredSection = () => {
 
   return (
     <FilteredContainer>
-      <span>Filter value: {filter}</span>
+      <FilterTitle>
+        Filter value: <FilterSubTitle>{filter}</FilterSubTitle>
+      </FilterTitle>
       <select value={filter} onChange={updateFilter}>
         <option value="Show All">All</option>
         <option value="Show Completed">Completed</option>
