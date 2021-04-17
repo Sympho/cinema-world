@@ -1,5 +1,7 @@
 import { atom } from 'recoil';
 
+import movies from './constants/movies';
+
 export const authState = atom({
   key: 'authState',
   default: false,
@@ -12,42 +14,5 @@ export const movieFilterState = atom({
 
 export const movieState = atom({
   key: 'movieState',
-  default: [
-    {
-      title: 'Avengers',
-      isComplete: true,
-      link:
-        'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
-    },
-    {
-      title: 'Avengers',
-      isComplete: false,
-      link:
-        'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
-    },
-    {
-      title: 'Avengers',
-      isComplete: false,
-      link:
-        'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
-    },
-    {
-      title: 'Avengers',
-      isComplete: false,
-      link:
-        'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
-    },
-    {
-      title: 'Avengers',
-      isComplete: false,
-      link:
-        'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
-    },
-    {
-      title: 'Avengers',
-      isComplete: false,
-      link:
-        'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
-    },
-  ],
+  default: movies,
 });
