@@ -21,7 +21,7 @@ const Home: FC<MovieSectionType> = ({ movie }) => {
       <Title>{movie.title}</Title>
 
       <Link to={movie.link}>Going to watch movie</Link>
-      <Checkbox checked={movie.isComplete} handleChange={updateFilter}/>
+      <Checkbox checked={movie.isComplete} handleChange={updateFilter} />
     </Wrapper>
   );
 };
