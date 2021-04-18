@@ -3,8 +3,13 @@ import Router from './routes/Router.ts';
 
 const app = new Application();
 
+const sleep = (time: number) => {
+  return new Promise(resolve => setTimeout(() => resolve(true), time));
+};
+
 // Logger
 app.use(async ({ request: { method, url } }, next) => {
+  // await sleep(2000);
   await next();
   console.log(`${method} ${url}`);
 });

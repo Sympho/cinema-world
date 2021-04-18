@@ -1,3 +1,3 @@
-import service from './service';
+import service, { createCancel } from './service';
 
-export { service };
+export { service, createCancel };
