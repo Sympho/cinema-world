@@ -1,13 +1,11 @@
 import axios from 'axios';
 
 const createService = () => {
-  console.log('init createService');
   const instance = axios.create({
     baseURL: 'http://localhost:5000/api',
     headers: {
       'Content-Type': 'application/json',
     },
-    cancelToken: new axios.CancelToken(cancel => {}),
   });
 
   instance.interceptors.request.use(
@@ -26,11 +24,23 @@ const createService = () => {
       return response;
     },
     async error => {
+      /*
+      const originalRequest = error.config;
+      if (error.response.status === 403 && !originalRequest._retry) {
+      // You should try to refresh ACCESS_TOKEN
+      originalRequest._retry = true;
+      const ACCESS_TOKEN = await refreshAccessToken();
+      axios.defaults.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`;
+      return axiosApiInstance(originalRequest);
+      }
+      */
       return Promise.reject(error);
     },
   );
 
   return instance;
 };
+
+export const createCancel = axios.CancelToken.source;
 
 export default createService();
