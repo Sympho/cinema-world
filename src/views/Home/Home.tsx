@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import Link from 'shared/components/Link';
-// import { movieState } from 'store/atoms';
 import { filteredTodoListState } from 'store/selectors';
 import MovieSection from './components/MovieSection';
 import FilteredSection from './components/FilteredSection';
