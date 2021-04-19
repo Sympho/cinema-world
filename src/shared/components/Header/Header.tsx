@@ -14,6 +14,7 @@ const Header = () => {
     <Wrapper>
       <Container>
         <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         {isAuth && (
           <ul style={{ display: 'flex', alignItems: 'center' }}>
             <li>
