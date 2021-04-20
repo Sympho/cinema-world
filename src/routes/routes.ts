@@ -3,6 +3,7 @@ import DashBoard from 'views/Dashboard';
 import { Login, Register } from 'views/Auth';
 import Profile from 'views/Profile';
 import About from 'views/About';
+import Contacts from 'views/Contacts';
 
 import { IRoute } from './types';
 
@@ -13,9 +14,12 @@ export const publicRoutes: IRoute[] = [
     component: Home,
   },
   {
-    exact: true,
     path: '/about',
     component: About,
+  },
+  {
+    path: '/contacts',
+    component: Contacts,
   },
 ];
 

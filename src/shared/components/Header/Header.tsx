@@ -15,6 +15,7 @@ const Header = () => {
       <Container>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+        <Link to="/contacts">Contacts</Link>
         {isAuth && (
           <ul style={{ display: 'flex', alignItems: 'center' }}>
             <li>
