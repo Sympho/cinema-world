@@ -20,8 +20,8 @@ const Home: FC = () => {
       <FilteredSection />
 
       <MovieContainer>
-        {movieList.map((movieItem, id) => (
-          <MovieSection movie={movieItem} key={id} />
+        {movieList.map(movieItem => (
+          <MovieSection movie={movieItem} key={movieItem.id} />
         ))}
       </MovieContainer>
     </Wrapper>

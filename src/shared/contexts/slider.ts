@@ -1,5 +1,14 @@
-import { createContext } from 'react';
+import { createContext, MutableRefObject } from 'react';
 
-const SliderContext = createContext(null);
+import { MovieType } from 'store/types';
+
+type ContextValueType = {
+  onSelectSlide: (movie: MovieType) => void;
+  onCloseSlide: () => void;
+  elementRef: MutableRefObject<HTMLHeadingElement | null>;
+  currentSlide: MovieType | null;
+};
+
+const SliderContext = createContext<ContextValueType | null>(null);
 
 export default SliderContext;
