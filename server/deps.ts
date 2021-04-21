@@ -10,6 +10,7 @@ import {
   Database,
   Model,
   SQLite3Connector,
+  Relationships,
 } from 'https://deno.land/x/denodb@v1.0.26/mod.ts';
 
 import { oakCors } from 'https://deno.land/x/cors@v1.2.1/mod.ts';
@@ -21,6 +22,7 @@ export {
   Model,
   DataTypes,
   SQLite3Connector,
+  Relationships,
   oakCors,
 };
 
