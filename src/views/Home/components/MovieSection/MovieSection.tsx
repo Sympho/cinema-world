@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import Link from 'shared/components/Link';
 import { Wrapper, Title, Avatar } from './styled';
 import { MovieSectionType } from './types';
+import { Image } from 'shared/components/Slider/components/Item/styled';
 
 const Home: FC<MovieSectionType> = ({ movie }) => {
   return (
@@ -10,7 +10,7 @@ const Home: FC<MovieSectionType> = ({ movie }) => {
       <Avatar />
       <Title>{movie.title}</Title>
 
-      <Link to={movie.link}>Going to watch movie</Link>
+      <Image src={movie.imageBg} alt="" />
       {/*<Checkbox checked={movie.isComplete} handleChange={updateFilter} />*/}
     </Wrapper>
   );

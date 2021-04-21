@@ -3,5 +3,4 @@ export interface MovieType {
   title: string;
   imageBg: string;
   isComplete: boolean;
-  link: string;
 }

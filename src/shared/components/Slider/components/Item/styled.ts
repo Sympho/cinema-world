@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type WrapperProps = {
-  isActive: boolean | null;
+  isActive?: boolean | null;
 };
 
 export const Wrapper = styled.div<WrapperProps>`

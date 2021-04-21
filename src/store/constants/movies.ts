@@ -1,57 +1,45 @@
 const movies = [
   {
     id: 1,
-    title: 'Avengers',
+    image: '/images/slide1.jpg',
     isComplete: true,
-    imageBg:
-      'https://i1.wp.com/itc.ua/wp-content/uploads/2020/02/big_startfilmru1436207-1.jpg?fit=1280%2C800&quality=100&strip=all&ssl=1',
-    link:
-      'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
+    imageBg: '/images/slide1b.webp',
+    title: '1983',
   },
   {
     id: 2,
-    title: 'Avengers',
-    isComplete: false,
-    imageBg:
-      'https://multiplex.ua/images/3e/57/3e571d60cc4bfae24e1b29b272328fd9.jpeg',
-    link:
-      'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
+    image: '/images/slide2.jpg',
+    isComplete: true,
+    imageBg: '/images/slide2b.webp',
+    title: 'Russian doll',
   },
   {
     id: 3,
-    title: 'Avengers',
-    isComplete: false,
-    imageBg:
-      'https://multiplex.ua/images/3e/57/3e571d60cc4bfae24e1b29b272328fd9.jpeg',
-    link:
-      'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
+    image: '/images/slide3.jpg',
+    isComplete: true,
+    imageBg: '/images/slide3b.webp',
+    title: 'The rain',
   },
   {
     id: 4,
-    title: 'Avengers',
+    image: '/images/slide4.jpg',
     isComplete: false,
-    imageBg:
-      'https://multiplex.ua/images/3e/57/3e571d60cc4bfae24e1b29b272328fd9.jpeg',
-    link:
-      'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
+    imageBg: '/images/slide4b.webp',
+    title: 'Sex education',
   },
   {
     id: 5,
-    title: 'Avengers',
+    image: '/images/slide5.jpg',
     isComplete: false,
-    imageBg:
-      'https://multiplex.ua/images/3e/57/3e571d60cc4bfae24e1b29b272328fd9.jpeg',
-    link:
-      'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
+    imageBg: '/images/slide5b.webp',
+    title: 'Elite',
   },
   {
     id: 6,
-    title: 'Avengers',
-    isComplete: false,
-    imageBg:
-      'https://multiplex.ua/images/3e/57/3e571d60cc4bfae24e1b29b272328fd9.jpeg',
-    link:
-      'https://rezka.ag/films/drama/38175-bratya-po-krovi-grazhdanskaya-voyna-2021.html',
+    image: '/images/slide6.jpg',
+    isComplete: true,
+    imageBg: '/images/slide6b.webp',
+    title: 'Black mirror',
   },
 ];
 
