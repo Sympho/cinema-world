@@ -6,12 +6,13 @@ import SlideButton from './components/SlideButton';
 import SliderWrapper from './components/SliderWrapper';
 import useSliding from 'helpers/hooks/useSliding';
 import useSizeElement from 'helpers/hooks/useSizeElement';
-import { SliderProps, MovieType } from './types';
+import { MovieType } from 'store/types';
+import { SliderProps } from './types';
 
 const Slider: FC<SliderProps> = ({ children, activeSlide }) => {
-  const [currentSlide, setCurrentSlide] = useState<MovieType | null>(
-    activeSlide,
-  );
+  const [currentSlide, setCurrentSlide] = useState<
+    MovieType | null | undefined
+  >(activeSlide);
   const { width, elementRef } = useSizeElement();
   const {
     handlePrev,

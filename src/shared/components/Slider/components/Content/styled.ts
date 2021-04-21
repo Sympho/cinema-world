@@ -28,7 +28,7 @@ export const ContentWrapper = styled.div`
         content: '';
         position: absolute;
         z-index: 10;
-        background-image: linear-gradient(to right,#000,transparent);
+        background-image: linear-gradient(to right, #000, transparent);
         top: 0;
         bottom: 0;
         left: 100%;
