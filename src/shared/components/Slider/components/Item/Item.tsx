@@ -4,9 +4,9 @@ import SliderContext from 'shared/contexts/slider';
 import ShowDetailsButton from '../ShowDetailsButton';
 import Mark from '../Mark';
 import { Wrapper, Image } from './styled';
-import { MovieType } from '../../types';
+import { ItemProps } from './types';
 
-const Item: FC<MovieType> = movie => (
+const Item: FC<ItemProps> = ({ movie }) => (
   <SliderContext.Consumer>
     {value => {
       const isActive =

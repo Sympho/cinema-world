@@ -1,6 +1,5 @@
 import { MovieType } from 'store/types';
 
-export type ContentProps = {
+export type ItemProps = {
   movie: MovieType;
-  onClose: () => void;
 };
