@@ -1,13 +1,18 @@
 import Model, { DataTypes, database } from '../core/Model.ts';
 
-class UserModel extends Model {
+class User extends Model {
   static table = 'users';
   static timestamps = true;
 
   static fields = {
-    id: { primaryKey: true, autoIncrement: true },
+    id: {
+      type: DataTypes.BIG_INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     email: {
       type: DataTypes.STRING,
+      as: 'userEmail',
       unique: true,
       allowNull: false,
       length: 50,
@@ -18,6 +23,4 @@ class UserModel extends Model {
   };
 }
 
-database.link([UserModel]);
-
-export default UserModel;
+export default User;

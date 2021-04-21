@@ -11,5 +11,12 @@ export const routes: Route[] = [
       response.body = 'Hello world!';
     },
   },
+  {
+    method: 'get',
+    path: '/about',
+    action: ({ response }: RouterContext) => {
+      response.body = 'Hello world!';
+    },
+  },
   ...authRoutes,
 ];
