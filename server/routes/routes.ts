@@ -1,7 +1,7 @@
 import { RouterContext } from '../deps.ts';
-import UserController from '../controllers/UserController.ts';
 import { Route } from './types.ts';
 import { authRoutes } from './authRoutes.ts';
+import { movieRoutes } from './movieRoutes.ts';
 
 export const routes: Route[] = [
   {
@@ -18,5 +18,6 @@ export const routes: Route[] = [
       response.body = 'Hello world!';
     },
   },
+  ...movieRoutes,
   ...authRoutes,
 ];
