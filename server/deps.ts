@@ -1,27 +1,16 @@
-import {
-  Application,
-  Router,
+export { Application, Router } from 'https://deno.land/x/oak@v6.5.0/mod.ts';
+
+export type {
   RouterContext,
   HTTPMethods,
 } from 'https://deno.land/x/oak@v6.5.0/mod.ts';
 
-import {
-  DataTypes,
-  Database,
-  Model,
-  SQLite3Connector,
-} from 'https://deno.land/x/denodb@v1.0.26/mod.ts';
-
-import { oakCors } from 'https://deno.land/x/cors@v1.2.1/mod.ts';
+export { oakCors } from 'https://deno.land/x/cors@v1.2.1/mod.ts';
 
 export {
-  Application,
-  Router,
+  DataTypes,
   Database,
   Model,
-  DataTypes,
   SQLite3Connector,
-  oakCors,
-};
-
-export type { RouterContext, HTTPMethods };
+  Relationships,
+} from 'https://deno.land/x/denodb@v1.0.26/mod.ts';

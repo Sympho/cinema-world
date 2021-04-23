@@ -1,4 +1,4 @@
-import UserModel from '../models/UserModel.ts';
+import { UserModel } from '../models/mods.ts';
 import { RouterContext } from '../deps.ts';
 
 interface User {
