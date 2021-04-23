@@ -1,27 +1,40 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  padding: 0 55px;
+  &.slider {
+    display: flex;
+    position: relative;
 
-  // TODO im not sure about this check how this implementing .container:hover .item { transform: translateX(-25%); }
-  :hover.ChildElement {
-    transform: translateX(-25%);
+    //&__container {
+    //  display: flex;
+    //  padding: 0 55px;
+    //  transition: transform 300ms ease 100ms;
+    //  z-index: 3;
+    //  width: 100%;
+    //}
+
+    :not(&--open) .item:hover .show-details-button {
+      opacity: 1;
+    }
+
+    :not(&--open) .item:hover {
+      transform: scale(1.5) !important;
+    }
+
+    :not(&--open):hover .item {
+      transform: translateX(-25%);
+    }
+
+    :not(&--open) .item:hover ~ .item {
+      transform: translateX(25%);
+    }
   }
 `;
 
-export const Item = styled.div`
-  background: green;
-  flex: 0 0 19.7%;
-  text-align: center;
-  margin: 0 2px;
+export const SliderContainer = styled.div`
+  display: flex;
+  padding: 0 55px;
   transition: transform 300ms ease 100ms;
-
-  &&&& {
-    :hover {
-      transform: scale(1.5);
-    }
-  }
-
-  // TODO im not sure about this check how this implementing .item:hover ~ .item { transform: translateX(25%); }
+  z-index: 3;
+  width: 100%;
 `;

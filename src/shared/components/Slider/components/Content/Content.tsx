@@ -10,7 +10,8 @@ const Content: FC<ContentProps> = ({ movie, onClose }) => (
       <div className="content__background__shadow" />
       <div
         className="content__background__image"
-        // style={{ 'background-image': `url(${movie.imageBg})` }}
+        // @ts-ignore
+        style={{ 'background-image': `url(${movie.imageBg})` }}
       />
     </div>
     <div className="content__area">

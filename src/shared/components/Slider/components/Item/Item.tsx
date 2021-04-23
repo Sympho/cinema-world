@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import cx from 'classnames';
 
 import SliderContext from 'shared/contexts/slider';
 import ShowDetailsButton from '../ShowDetailsButton';
@@ -13,7 +14,12 @@ const Item: FC<ItemProps> = ({ movie }) => (
         value!.currentSlide && value!.currentSlide.id === movie.id;
 
       return (
-        <Wrapper ref={value!.elementRef} isActive={isActive}>
+        <Wrapper
+          ref={value!.elementRef}
+          className={cx('item', {
+            'item--open': isActive,
+          })}
+        >
           <Image src={movie.imageBg} alt="" />
           <ShowDetailsButton onClick={() => value!.onSelectSlide(movie)} />
           {isActive && <Mark />}
