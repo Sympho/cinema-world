@@ -6,7 +6,6 @@ import { FilteredContainer, FilterTitle, FilterSubTitle } from './styled';
 
 const FilteredSection: FC = () => {
   const [filter, setFilter] = useRecoilState(movieFilterState);
-  console.log('filter', filter);
 
   const updateFilter = (e: ChangeEvent<HTMLSelectElement>) => {
     setFilter(e.target.value);

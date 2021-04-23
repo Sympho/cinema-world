@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import StyledButton from 'shared/components/StyledButton';
 import { StyledBtnProps } from './types';
 
-export const SlideBtn = styled(StyledButton)<StyledBtnProps>`
+export const SlideBtn = styled.button<StyledBtnProps>`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -22,8 +22,8 @@ export const SlideBtn = styled(StyledButton)<StyledBtnProps>`
     margin: 0 auto;
   }
 
-  ${({ type }) =>
-    type === 'next' &&
+  ${({ typeBtn }) =>
+    typeBtn === 'next' &&
     css`
       right: 0;
 
@@ -32,8 +32,8 @@ export const SlideBtn = styled(StyledButton)<StyledBtnProps>`
       }
     `}
 
-  ${({ type }) =>
-    type === 'prev' &&
+  ${({ typeBtn }) =>
+    typeBtn === 'prev' &&
     css`
       left: 0;
 
