@@ -3,17 +3,17 @@ import { Route } from './types.ts';
 
 export const authRoutes: Route[] = [
   {
-    method: 'get',
+    method: 'post',
     path: '/auth/login',
     action: AuthController.login,
   },
   {
-    method: 'get',
+    method: 'post',
     path: '/auth/register',
     action: AuthController.register,
   },
   {
-    method: 'get',
+    method: 'post',
     path: '/auth/forgot-password',
     action: AuthController.forgotPassword,
   },

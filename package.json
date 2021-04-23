@@ -49,7 +49,7 @@
     "lint:fix": "yarn run eslint --fix src",
     "lint:css": "stylelint src/**/*.css",
     "serve": "~/.deno/bin/denon -c server/scripts.json start",
-    "createTable": "deno run --allow-read --allow-write --allow-net server/updateTable.ts"
+    "createTable": "deno run --allow-read --allow-write --allow-net --unstable server/updateTable.ts"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [

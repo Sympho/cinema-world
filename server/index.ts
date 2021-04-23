@@ -1,6 +1,9 @@
 import { Application, oakCors } from './deps.ts';
 import Router from './routes/Router.ts';
 
+// Deno.env.set('ENVIRONMENT', 'development');
+// Deno.env.set('SALT', '$2a$08$gDG8fF0IXVGTXLyDCV1TNu');
+
 const app = new Application();
 
 const sleep = (time: number) => {

@@ -1,12 +1,5 @@
-import { UserModel } from '../models/mods.ts';
+import { UserModel } from '../models/mod.ts';
 import { RouterContext } from '../deps.ts';
-
-interface User {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password?: string;
-}
 
 class UserController {
   public async getList({ response }: RouterContext) {
@@ -23,32 +16,25 @@ class UserController {
 
   public async createItem({ request, response }: RouterContext) {
     const { firstName, lastName, email, password } = await request.body().value;
-    // if (!request.hasBody) {
-    //   response.status = 400;
-    //   response.body = {
-    //     success: false,
-    //     message: 'No data provided',
-    //   };
-    //   return;
-    // }
 
-    if (firstName && lastName && email && password) {
-      const { password: pass, ...user }: any = await UserModel.create({
-        firstName,
-        lastName,
-        email,
-        password,
-      });
-
-      response.body = user;
+    if (!request.hasBody || !firstName || !lastName || !email || !password) {
+      response.status = 400;
+      response.body = {
+        success: false,
+        message: 'No data provided',
+      };
       return;
     }
 
-    response.status = 400;
-    response.body = {
-      success: false,
-      message: 'No data provided',
-    };
+    const { password: pass, ...user }: any = await UserModel.create({
+      firstName,
+      lastName,
+      email,
+      password,
+    });
+
+    response.body = user;
+    return;
   }
 }
 

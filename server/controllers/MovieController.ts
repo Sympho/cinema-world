@@ -1,5 +1,5 @@
 import { RouterContext } from '../deps.ts';
-import { MovieModel } from '../models/mods.ts';
+import { MovieModel } from '../models/mod.ts';
 
 class MovieController {
   public async getItems({ response }: RouterContext) {

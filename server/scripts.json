@@ -1,5 +1,6 @@
 {
   "allow": {
+    "env": true,
     "run": true,
     "net": true,
     "read": "server",
@@ -8,7 +9,7 @@
   },
   "scripts": {
     "start": {
-      "cmd": "deno run server/index.ts",
+      "cmd": "deno run  --unstable server/index.ts",
       "desc": "run my index.ts file"
     }
   },

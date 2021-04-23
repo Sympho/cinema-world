@@ -1,4 +1,4 @@
-import Model, { DataTypes, database } from '../core/Model.ts';
+import Model, { DataTypes } from '../core/Model.ts';
 
 class User extends Model {
   static table = 'users';
@@ -17,9 +17,31 @@ class User extends Model {
       allowNull: false,
       length: 50,
     },
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    password: DataTypes.STRING,
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      length: 50,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      length: 50,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      length: 100,
+    },
+    accessToken: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      length: 255,
+    },
+    refreshToken: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      length: 255,
+    },
   };
 }
 
