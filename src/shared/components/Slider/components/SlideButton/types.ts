@@ -1,8 +1,10 @@
+export type typeBtn = 'prev' | 'next';
+
 export type SlideButtonProps = {
   onClick: () => void;
-  type: string;
+  type: typeBtn;
 };
 
 export type StyledBtnProps = {
-  type?: 'prev' | 'next';
+  typeBtn?: typeBtn;
 };

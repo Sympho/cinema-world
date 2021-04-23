@@ -1,4 +1,5 @@
 import { useState, Children, FC } from 'react';
+import cx from 'classnames';
 
 import SliderContext from 'shared/contexts/slider';
 import Content from './components/Content';
@@ -6,6 +7,7 @@ import SlideButton from './components/SlideButton';
 import SliderWrapper from './components/SliderWrapper';
 import useSliding from 'helpers/hooks/useSliding';
 import useSizeElement from 'helpers/hooks/useSizeElement';
+import { Container, SliderContainer } from './styled';
 import { MovieType } from 'store/types';
 import { SliderProps } from './types';
 
@@ -41,16 +43,13 @@ const Slider: FC<SliderProps> = ({ children, activeSlide }) => {
   return (
     <SliderContext.Provider value={contextValue}>
       <SliderWrapper>
-        {/*<div className={cx('slider', { 'slider--open': currentSlide != null })}>*/}
-        {/*  <div ref={containerRef} className="slider__container" {...slideProps}>*/}
-        {/*    {children}*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-        <div>
-          <div ref={containerRef} className="slider__container" {...slideProps}>
+        <Container
+          className={cx('slider', { 'slider--open': currentSlide != null })}
+        >
+          <SliderContainer ref={containerRef} {...slideProps}>
             {children}
-          </div>
-        </div>
+          </SliderContainer>
+        </Container>
         {hasPrev && <SlideButton onClick={handlePrev} type="prev" />}
         {hasNext && <SlideButton onClick={handleNext} type="next" />}
       </SliderWrapper>

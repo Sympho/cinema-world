@@ -5,7 +5,7 @@ import { SlideBtn } from './styled';
 import { SlideButtonProps } from './types';
 
 const SlideButton: FC<SlideButtonProps> = ({ onClick, type }) => (
-  <SlideBtn type={type} onClick={onClick}>
+  <SlideBtn typeBtn={type} onClick={onClick}>
     <span>
       <IconArrowDown />
     </span>
