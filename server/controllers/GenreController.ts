@@ -1,5 +1,5 @@
 import { RouterContext } from '../deps.ts';
-import { GenreModel } from '../models/mods.ts';
+import { GenreModel } from '../models/mod.ts';
 
 class GenreController {
   public async getItems({ response }: RouterContext) {
