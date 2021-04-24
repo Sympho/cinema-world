@@ -1,34 +1,31 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  &.slider {
-    display: flex;
-    position: relative;
+import { Btn } from 'shared/components/Slider/components/ShowDetailsButton/styled';
+import { Wrapper } from 'shared/components/Slider/components/Item/styled';
+import { ContainerProps } from './types';
 
-    //&__container {
-    //  display: flex;
-    //  padding: 0 55px;
-    //  transition: transform 300ms ease 100ms;
-    //  z-index: 3;
-    //  width: 100%;
-    //}
+export const Container = styled.div<ContainerProps>`
+  display: flex;
+  position: relative;
 
-    :not(&--open) .item:hover .show-details-button {
-      opacity: 1;
-    }
+  ${({ ifOpenSlider }) =>
+    (ifOpenSlider === null || !ifOpenSlider) &&
+    css`
+      & ${Wrapper}:hover ${Btn} {
+        opacity: 1;
+      }
+      ${Wrapper}:hover {
+        transform: scale(1.5) !important;
+      }
 
-    :not(&--open) .item:hover {
-      transform: scale(1.5) !important;
-    }
+      :hover ${Wrapper} {
+        transform: translateX(-25%);
+      }
 
-    :not(&--open):hover .item {
-      transform: translateX(-25%);
-    }
-
-    :not(&--open) .item:hover ~ .item {
-      transform: translateX(25%);
-    }
-  }
+      ${Wrapper}:hover ~ ${Wrapper} {
+        transform: translateX(25%);
+      }
+    `};
 `;
 
 export const SliderContainer = styled.div`
