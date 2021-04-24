@@ -5,7 +5,7 @@ import { Btn } from './styled';
 import { BtnProps } from './types';
 
 const ShowDetailsButton: FC<BtnProps> = ({ onClick }) => (
-  <Btn onClick={onClick} className="show-details-button">
+  <Btn onClick={onClick}>
     <span>
       <IconArrowDown />
     </span>

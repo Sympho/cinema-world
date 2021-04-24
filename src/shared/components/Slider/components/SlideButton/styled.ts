@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import StyledButton from 'shared/components/StyledButton';
 import { StyledBtnProps } from './types';
 
 export const SlideBtn = styled.button<StyledBtnProps>`
+  cursor: pointer;
   position: absolute;
   top: 0;
   bottom: 0;

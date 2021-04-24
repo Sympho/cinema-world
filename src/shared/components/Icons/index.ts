@@ -1,2 +1,4 @@
-export * from './IconArrowDown';
-export * from './IconCross';
+import IconCross from './IconCross';
+import IconArrowDown from './IconArrowDown';
+
+export { IconCross, IconArrowDown };

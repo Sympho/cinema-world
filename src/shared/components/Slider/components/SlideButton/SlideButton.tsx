@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import IconArrowDown from 'shared/components/Icons/IconArrowDown';
+import { IconArrowDown } from 'shared/components/Icons';
 import { SlideBtn } from './styled';
 import { SlideButtonProps } from './types';
 

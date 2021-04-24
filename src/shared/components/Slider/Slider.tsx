@@ -1,5 +1,4 @@
 import { useState, Children, FC } from 'react';
-import cx from 'classnames';
 
 import SliderContext from 'shared/contexts/slider';
 import Content from './components/Content';
@@ -43,9 +42,7 @@ const Slider: FC<SliderProps> = ({ children, activeSlide }) => {
   return (
     <SliderContext.Provider value={contextValue}>
       <SliderWrapper>
-        <Container
-          className={cx('slider', { 'slider--open': currentSlide != null })}
-        >
+        <Container ifOpenSlider={currentSlide}>
           <SliderContainer ref={containerRef} {...slideProps}>
             {children}
           </SliderContainer>
