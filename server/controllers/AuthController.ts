@@ -1,6 +1,6 @@
 import { bcrypt, djwt, RouterContext } from '../deps.ts';
 import { SALT } from '../config.ts';
-import { UserModel } from '../models/mod.ts';
+import { MovieModel, UserModel } from '../models/mod.ts';
 
 class AuthController {
   public async login({ request, response }: RouterContext) {
@@ -38,6 +38,18 @@ class AuthController {
       response.body = {
         success: false,
         message: 'Password must be greater than 10 symbols.',
+      };
+
+      return;
+    }
+
+    const existingData: any = await UserModel.where('email', email).get();
+
+    if (existingData.length > 0) {
+      response.status = 400;
+      response.body = {
+        success: false,
+        message: 'Check your email.',
       };
 
       return;

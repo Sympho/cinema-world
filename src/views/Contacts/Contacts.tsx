@@ -1,11 +1,23 @@
-import { FC } from 'react';
+import { useEffect, FC } from 'react';
 
+import { movies } from 'api';
+
+import Link from 'shared/components/Link';
 import Page from 'shared/components/Page';
 import Input from 'shared/components/Input';
 
 const Contacts: FC = () => {
+  useEffect(() => {
+    movies.getItems().then(res => {
+      console.log(res);
+    });
+  }, []);
   return (
     <Page>
+      <p>
+        <Link to="/auth">Auth</Link>
+      </p>
+
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
         consectetur cumque dignissimos eius eos facilis in laudantium pariatur,
