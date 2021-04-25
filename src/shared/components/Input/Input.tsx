@@ -1,45 +1,16 @@
-import { FC } from 'react';
+import { FC, ChangeEvent } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import {
   StyleFieldset,
+  StyleInputBox,
   StyledLabel,
   StyledInput,
   StyledTextarea,
   StyledSelect,
 } from './styled';
 
-type InputValue = boolean | number | string;
-
-type InputOptions = {
-  value: InputValue;
-  label: number | string;
-};
-
-type InputByTypes =
-  | {
-      type: 'select' | 'radio';
-      value?: InputValue;
-    }
-  | {
-      type: 'select';
-      multiple: true;
-      value?: InputValue[];
-    }
-  | {
-      type?: string;
-      value?: InputValue;
-    };
-
-type InputProps = InputByTypes & {
-  autoFocus?: boolean;
-  label?: string;
-  name?: string;
-  id?: string;
-  options?: InputOptions[];
-  value?: string | number;
-  placeholder?: string;
-};
+import { InputProps } from './types';
 
 const Input: FC<InputProps> = ({
   autoFocus = false,
@@ -50,8 +21,15 @@ const Input: FC<InputProps> = ({
   placeholder,
   options = [],
   value,
+  onChange = () => {},
+  validate,
 }) => {
   const id = outerId || uuidv4();
+
+  const changeHandle = (event: ChangeEvent) => {
+    const newValue = (event.target as HTMLInputElement).value;
+    onChange(newValue, event, name);
+  };
 
   const commonProps = {
     id: id,
@@ -60,26 +38,30 @@ const Input: FC<InputProps> = ({
     name,
     defaultValue: value,
     spellCheck: false,
+    onChange: changeHandle,
   };
 
   return (
     <StyleFieldset>
       {label && <StyledLabel htmlFor={id}>{label}</StyledLabel>}
+      <StyleInputBox>
+        {type === 'text' && <StyledInput {...commonProps} />}
 
-      {type === 'text' && <StyledInput {...commonProps} />}
+        {type === 'email' && <StyledInput type="email" {...commonProps} />}
 
-      {type === 'textarea' && <StyledTextarea {...commonProps} />}
+        {type === 'textarea' && <StyledTextarea {...commonProps} />}
 
-      {type === 'select' && (
-        <StyledSelect {...commonProps}>
-          {value === undefined && <option hidden>Select...</option>}
-          {options.map(({ value, label }) => (
-            <option key={String(value)} value={String(value)}>
-              {label}
-            </option>
-          ))}
-        </StyledSelect>
-      )}
+        {type === 'select' && (
+          <StyledSelect {...commonProps}>
+            {value === undefined && <option hidden>Select...</option>}
+            {options.map(({ value, label }) => (
+              <option key={String(value)} value={String(value)}>
+                {label}
+              </option>
+            ))}
+          </StyledSelect>
+        )}
+      </StyleInputBox>
     </StyleFieldset>
   );
 };

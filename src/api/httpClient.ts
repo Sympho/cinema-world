@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const createService = () => {
+const createClient = () => {
   const instance = axios.create({
     baseURL: 'http://localhost:5000/api',
     headers: {
@@ -11,7 +11,10 @@ const createService = () => {
   instance.interceptors.request.use(
     config => {
       // get the stored token
-      // config.headers.Authorization = `Bearer ${ACCESS_TOKEN}`,
+
+      config.headers.Authorization = `Bearer ${JSON.parse(
+        localStorage.getItem('ACCESS_TOKEN') || '',
+      )}`;
       return config;
     },
     error => {
@@ -43,4 +46,4 @@ const createService = () => {
 
 export const createCancel = axios.CancelToken.source;
 
-export default createService();
+export default createClient();
