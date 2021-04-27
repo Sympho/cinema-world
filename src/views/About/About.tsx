@@ -1,6 +1,6 @@
 import { useState, FC } from 'react';
 
-import { service, createCancel } from 'service';
+import { httpClient, createCancel } from 'api';
 
 import Page from 'shared/components/Page';
 
@@ -11,7 +11,7 @@ const About: FC = () => {
     const source = await createCancel();
     setCancelSource(source);
 
-    const { data, ...rest } = await service.get('/', {
+    const { data, ...rest } = await httpClient.get('/', {
       cancelToken: source.token,
     });
 
