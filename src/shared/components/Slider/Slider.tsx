@@ -1,11 +1,12 @@
 import { useState, Children, FC } from 'react';
 
+import useSliding from 'shared/hooks/useSliding';
+import useSizeElement from 'shared/hooks/useSizeElement';
 import SliderContext from 'shared/contexts/slider';
+
 import Content from './components/Content';
 import SlideButton from './components/SlideButton';
 import SliderWrapper from './components/SliderWrapper';
-import useSliding from 'helpers/hooks/useSliding';
-import useSizeElement from 'helpers/hooks/useSizeElement';
 import { Container, SliderContainer } from './styled';
 import { MovieType } from 'store/types';
 import { SliderProps } from './types';
