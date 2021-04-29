@@ -2,7 +2,7 @@ import { useState, FC, SyntheticEvent, ChangeEvent } from 'react';
 
 import { auth, RegisterUserFields } from 'api';
 
-import useLocalStorage from 'helpers/hooks/useLocalStorage';
+import useLocalStorage from 'shared/hooks/useLocalStorage';
 
 import Page from 'shared/components/Page';
 import Link from 'shared/components/Link';
