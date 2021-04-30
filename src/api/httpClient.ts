@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+import { getFromLS } from 'shared/helpers/localStorage';
+import { KEY_ACCESS_TOKEN } from 'shared/constants/auth';
+
 const createClient = () => {
   const instance = axios.create({
     baseURL: 'http://localhost:5000/api',
@@ -10,11 +13,8 @@ const createClient = () => {
 
   instance.interceptors.request.use(
     config => {
-      // get the stored token
-
-      config.headers.Authorization = `Bearer ${JSON.parse(
-        localStorage.getItem('ACCESS_TOKEN') || '',
-      )}`;
+      const accessToken = getFromLS<string>(KEY_ACCESS_TOKEN, '');
+      if (accessToken) config.headers.Authorization = `Bearer ${accessToken}`;
       return config;
     },
     error => {
@@ -32,8 +32,8 @@ const createClient = () => {
       if (error.response.status === 403 && !originalRequest._retry) {
       // You should try to refresh ACCESS_TOKEN
       originalRequest._retry = true;
-      const ACCESS_TOKEN = await refreshAccessToken();
-      axios.defaults.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`;
+      const accessToken = await refreshAccessToken();
+      axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
       return axiosApiInstance(originalRequest);
       }
       */

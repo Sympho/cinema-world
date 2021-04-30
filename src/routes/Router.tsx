@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import App from 'App';
 import NotFound from 'views/NotFound';
-import { availableLangs, defaultLang } from 'shared/constants/locales';
+import { AVAILABLE_LANGS, DEFAULT_LANG } from 'shared/constants/locales';
 
 import { publicRoutes, authRoutes, profileRoutes } from './routes';
 import { IRoute, RouterProps } from './types';
 
 const loginUrl = authRoutes[0].url || '';
 const profUrl = profileRoutes[0].url || '';
-const langPath = `:lang(${availableLangs.join('|')})`; //[a-z]{2}
+const langPath = `:lang(${AVAILABLE_LANGS.join('|')})`; //[a-z]{2}
 
 const withLang = (path: string, lang?: string) => `/${lang || langPath}${path}`;
 
@@ -59,7 +59,7 @@ const Router: FC<RouterProps> = ({ isAuth }) => {
         />
 
         <Route path="/" exact>
-          <Redirect to={`/${defaultLang}/`} />
+          <Redirect to={`/${DEFAULT_LANG}/`} />
         </Route>
 
         <Route path="*">

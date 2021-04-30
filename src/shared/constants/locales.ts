@@ -1,2 +1,2 @@
-export const availableLangs = ['en', 'ua', 'ru', 'de'];
-export const defaultLang = 'en';
+export const AVAILABLE_LANGS = ['en', 'ua', 'ru', 'de'];
+export const DEFAULT_LANG = 'en';
