@@ -1,29 +1,19 @@
-import { isNil } from 'lodash';
 import { useState } from 'react';
+
+import { getFromLS, setToLS } from 'shared/helpers/localStorage';
 
 const useLocalStorage = <T>(
   key: string,
   initialValue: T,
 ): [T, (v: T) => void] => {
   const [storedValue, setStoredValue] = useState<T>(() => {
-    try {
-      const item: string | null = localStorage.getItem(key);
-      return !isNil(item) ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      // console.log('We have error getting item from localStorage: ', error);
-      return initialValue;
-    }
+    return getFromLS<T>(key, initialValue);
   });
 
   const setValue = (value: T | ((v: T) => T)): void => {
-    try {
-      // if you use setValue((storedValue) => {}), value can be function
-      const newValue = value instanceof Function ? value(storedValue) : value;
-      localStorage.setItem(key, JSON.stringify(newValue));
-      setStoredValue(newValue);
-    } catch (error) {
-      // console.log('We have error setting to localStorage: ', error);
-    }
+    // if you use setValue((storedValue) => {}), value can be function
+    const newValue = value instanceof Function ? value(storedValue) : value;
+    setStoredValue(setToLS<T>(key, newValue));
   };
 
   return [storedValue, setValue];

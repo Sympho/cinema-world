@@ -3,6 +3,7 @@ import { useState, FC, SyntheticEvent, ChangeEvent } from 'react';
 import { auth, RegisterUserFields } from 'api';
 
 import useLocalStorage from 'shared/hooks/useLocalStorage';
+import { KEY_ACCESS_TOKEN } from 'shared/constants/auth';
 
 import Page from 'shared/components/Page';
 import Link from 'shared/components/Link';
@@ -12,7 +13,7 @@ import Button from 'shared/components/Button';
 
 const Register: FC = () => {
   const [accessToken, setAccessToken] = useLocalStorage<string>(
-    'ACCESS_TOKEN',
+    KEY_ACCESS_TOKEN,
     '',
   );
 
