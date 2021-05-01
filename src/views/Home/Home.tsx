@@ -14,6 +14,9 @@ import { MovieType } from 'store/types';
 const Home: FC = () => {
   const movieList = useRecoilValue<MovieType[]>(filteredTodoListState);
   const movies = useRecoilValue<MovieType[]>(movieState);
+  // const moviesFromQuery = useRecoilValue(moviesData);
+
+  // console.log(moviesFromQuery);
 
   return (
     <Wrapper>

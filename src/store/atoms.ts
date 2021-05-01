@@ -16,3 +16,8 @@ export const movieState = atom({
   key: 'movieState',
   default: movies,
 });
+
+// export const moviesDataState = atom({
+//   key: 'MoviesData',
+//   default: movies,
+// });
