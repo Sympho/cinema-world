@@ -1,6 +1,7 @@
 import { selector } from 'recoil';
 
 import { movieState, movieFilterState } from './atoms';
+import { getItems } from 'api/services/movies';
 
 export const filteredTodoListState = selector({
   key: 'filteredTodoListState',
@@ -16,5 +17,32 @@ export const filteredTodoListState = selector({
       default:
         return list;
     }
+  },
+});
+
+export const movieStatsState = selector({
+  key: 'movieStatsState',
+  get: ({ get }) => {
+    const movieList = get(movieState);
+    const totalNum = movieList.length;
+    const totalWatchedNum = movieList.filter(movie => movie.isComplete).length;
+    const totalUnwatchedNum = totalNum - totalWatchedNum;
+    const percentWatched =
+      totalNum === 0 ? 0 : (totalWatchedNum / totalNum) * 100;
+
+    return {
+      totalNum,
+      totalWatchedNum,
+      totalUnwatchedNum,
+      percentWatched,
+    };
+  },
+});
+
+export const moviesData = selector({
+  key: 'moviesData',
+  get: async () => {
+    const response = await getItems();
+    return response;
   },
 });
