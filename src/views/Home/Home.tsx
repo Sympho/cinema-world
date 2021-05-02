@@ -15,8 +15,10 @@ const Home: FC = () => {
   const movieList = useRecoilValue<MovieType[]>(filteredTodoListState);
   const movies = useRecoilValue<MovieType[]>(movieState);
   // const moviesFromQuery = useRecoilValue(moviesData);
+  // const movieFromQuery = useRecoilValue(moviesDataById);
 
   // console.log(moviesFromQuery);
+  // console.log(movieFromQuery);
 
   return (
     <Wrapper>
