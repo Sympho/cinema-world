@@ -8,7 +8,8 @@ import MovieSection from './components/MovieSection';
 import FilteredSection from './components/FilteredSection';
 import Slider from 'shared/components/Slider';
 import Item from 'shared/components/Slider/components/Item';
-import { Wrapper, Title, MovieContainer } from './StyledComponents';
+import MovieStats from './components/movieStats';
+import { Wrapper, Title, MovieContainer } from './styled';
 import { MovieType } from 'store/types';
 
 const Home: FC = () => {
@@ -37,6 +38,7 @@ const Home: FC = () => {
           ))}
         </Slider>
       </div>
+      <MovieStats />
       <MovieContainer>
         {movieList.map(movieItem => (
           <MovieSection movie={movieItem} key={movieItem.id} />
