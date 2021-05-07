@@ -1,14 +1,16 @@
 import { FC } from 'react';
+
 import Header from 'shared/components/Header';
 import Footer from 'shared/components/Footer';
+import { AppWrapper, Content } from './StyledApp';
 
 const App: FC = ({ children }) => {
   return (
-    <div>
+    <AppWrapper>
       <Header />
-      <div>{children}</div>
+      <Content>{children}</Content>
       <Footer />
-    </div>
+    </AppWrapper>
   );
 };
 

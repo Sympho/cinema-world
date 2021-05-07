@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  flex-shrink: 0;
   height: 50px;
   background: rgba(0, 0, 0, 0.15);
 `;
