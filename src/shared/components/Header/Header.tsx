@@ -14,6 +14,7 @@ const Header = () => {
     <Wrapper>
       <Container>
         <Link to="/">Home</Link>
+        <Link to="/schedule">Schedule</Link>
         <Link to="/about">About</Link>
         <Link to="/contacts">Contacts</Link>
         {isAuth && (
