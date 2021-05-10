@@ -1,18 +1,24 @@
 import { FC } from 'react';
 
 import Page from 'shared/components/Page';
-import { ScheduleContainer } from './styled';
+import FilteredSection from './components/FilteredSection';
+import Gallery from './components/Gallery';
+import { ScheduleContainer, Info, Title, Content } from './styled';
 import { ScheduleProps } from './types';
 
 const Schedule: FC<ScheduleProps> = () => {
   return (
     <Page>
-      <h1>Schedule</h1>
       <ScheduleContainer>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad beatae ea,
-        iste neque omnis quaerat quo quos similique velit. Cupiditate esse
-        fugiat ipsum omnis possimus rerum voluptatem. Quisquam, velit,
-        voluptatum!
+        <Info>
+          <Title>Розклад сеансів у Києві (Blockbuster)</Title>
+          <span>Some Info Icon</span>
+        </Info>
+
+        <Content>
+          <FilteredSection />
+          <Gallery />
+        </Content>
       </ScheduleContainer>
     </Page>
   );
