@@ -4,3 +4,8 @@ export const authState = atom({
   key: 'authState',
   default: false,
 });
+
+export const loggedUserData = atom({
+  key: 'loggedUserData',
+  default: {},
+});
