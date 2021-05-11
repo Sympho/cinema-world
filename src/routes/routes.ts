@@ -1,12 +1,15 @@
-import Home from 'views/Home';
-import DashBoard from 'views/Dashboard';
-import { Login, Register } from 'views/Auth';
-import Profile from 'views/Profile';
-import About from 'views/About';
-import Contacts from 'views/Contacts';
-import Schedule from 'views/Schedule';
+import { lazy } from 'react';
 
 import { IRoute } from './types';
+
+const Home = lazy(() => import('views/Home'));
+const DashBoard = lazy(() => import('views/Dashboard'));
+const Login = lazy(() => import('views/Auth/Login'));
+const Register = lazy(() => import('views/Auth/Register'));
+const Profile = lazy(() => import('views/Profile'));
+const About = lazy(() => import('views/About'));
+const Contacts = lazy(() => import('views/Contacts'));
+const Schedule = lazy(() => import('views/Schedule'));
 
 export const publicRoutes: IRoute[] = [
   {
