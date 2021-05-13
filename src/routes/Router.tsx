@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Suspense, lazy, FC, ReactNode } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import App from 'App';
@@ -17,11 +17,11 @@ const withLang = (path: string, lang?: string) => `/${lang || langPath}${path}`;
 // We use function because component doesn't render in Switch
 const renderRoutes = (
   routes: IRoute[],
-  renderComponent: (Comp: FC) => any = (Comp: FC) => <Comp />,
+  renderComponent: (Comp: FC) => ReactNode = (Comp: FC) => <Comp />,
 ) => {
-  return routes.map(({ path, component: Component, ...params }) => (
+  return routes.map(({ path, componentPath, ...params }) => (
     <Route key={withLang(path)} path={withLang(path)} {...params}>
-      <App>{renderComponent(Component)}</App>
+      <App>{renderComponent(lazy(() => import(`../${componentPath}`)))}</App>
     </Route>
   ));
 };
@@ -29,18 +29,20 @@ const renderRoutes = (
 const Routes: FC<RouterProps> = ({ isAuth, lang }) => {
   return (
     <Switch>
-      {renderRoutes(publicRoutes)}
+      <Suspense fallback={<span>Loader...</span>}>
+        {renderRoutes(publicRoutes)}
 
-      {renderRoutes(profileRoutes, Comp => {
-        return isAuth ? <Comp /> : <Redirect to={withLang(loginUrl, lang)} />;
-      })}
-      {renderRoutes(authRoutes, Comp => {
-        return !isAuth ? <Comp /> : <Redirect to={withLang(profUrl, lang)} />;
-      })}
+        {renderRoutes(profileRoutes, Comp => {
+          return isAuth ? <Comp /> : <Redirect to={withLang(loginUrl, lang)} />;
+        })}
+        {renderRoutes(authRoutes, Comp => {
+          return !isAuth ? <Comp /> : <Redirect to={withLang(profUrl, lang)} />;
+        })}
 
-      <Route path={withLang('/*')} exact>
-        <NotFound />
-      </Route>
+        <Route path={withLang('/*')} exact>
+          <NotFound />
+        </Route>
+      </Suspense>
     </Switch>
   );
 };

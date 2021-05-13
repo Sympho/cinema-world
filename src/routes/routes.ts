@@ -1,34 +1,23 @@
-import { lazy } from 'react';
-
 import { IRoute } from './types';
-
-const Home = lazy(() => import('views/Home'));
-const DashBoard = lazy(() => import('views/Dashboard'));
-const Login = lazy(() => import('views/Auth/Login'));
-const Register = lazy(() => import('views/Auth/Register'));
-const Profile = lazy(() => import('views/Profile'));
-const About = lazy(() => import('views/About'));
-const Contacts = lazy(() => import('views/Contacts'));
-const Schedule = lazy(() => import('views/Schedule'));
 
 export const publicRoutes: IRoute[] = [
   {
     exact: true,
     path: '/',
-    component: Home,
+    componentPath: 'views/Home',
   },
   {
     exact: true,
     path: '/schedule',
-    component: Schedule,
+    componentPath: 'views/Schedule',
   },
   {
     path: '/about',
-    component: About,
+    componentPath: 'views/About',
   },
   {
     path: '/contacts',
-    component: Contacts,
+    componentPath: 'views/Contacts',
   },
 ];
 
@@ -37,15 +26,15 @@ export const authRoutes: IRoute[] = [
     exact: true,
     url: '/auth/',
     path: '/:page(auth)/',
-    component: Login,
+    componentPath: 'views/Auth/Login',
   },
   {
     path: '/auth/:page(login)/',
-    component: Login,
+    componentPath: 'views/Auth/Login',
   },
   {
     path: '/auth/:page(register)/',
-    component: Register,
+    componentPath: 'views/Auth/Register',
   },
 ];
 
@@ -53,14 +42,14 @@ export const profileRoutes: IRoute[] = [
   {
     url: '/profile/',
     path: '/:page(profile)/',
-    component: Profile,
+    componentPath: 'views/Profile',
   },
   {
     path: '/:page(profile)/settings/',
-    component: Profile,
+    componentPath: 'views/Profile',
   },
   {
     path: '/:page(dashboard)/',
-    component: DashBoard,
+    componentPath: 'views/Dashboard',
   },
 ];
