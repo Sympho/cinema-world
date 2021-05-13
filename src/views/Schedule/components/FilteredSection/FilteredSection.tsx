@@ -6,7 +6,11 @@ import { FilteredSectionProps } from './types';
 const FilteredSection: FC<FilteredSectionProps> = () => {
   return (
     <Wrapper>
-      <span>sdasdasdasd</span>
+      <span>Filter Section</span>
+      <span>Period</span>
+      <span>Technology</span>
+      <span>Format</span>
+      <span>Another</span>
     </Wrapper>
   );
 };
