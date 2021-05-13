@@ -1,10 +1,8 @@
-import { FC } from 'react';
-
 export interface IRoute {
   url?: string;
   exact?: boolean;
   path: string;
-  component: FC;
+  componentPath: string;
 }
 
 export interface RouterProps {
