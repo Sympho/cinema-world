@@ -1,6 +1,14 @@
 import { FC } from 'react';
 
-import { Wrapper } from './styled';
+import {
+  Wrapper,
+  RightSection,
+  Title,
+  RightContent,
+  Day,
+  Technology,
+  Time,
+} from './styled';
 import { GalleryItemProps } from './types';
 
 const GalleryItem: FC<GalleryItemProps> = ({
@@ -13,18 +21,18 @@ const GalleryItem: FC<GalleryItemProps> = ({
   return (
     <Wrapper>
       <div>{img}</div>
-      <div>
-        <span>{title}</span>
-        <span>{day}</span>
-        <div>
+      <RightSection>
+        <Title>{title}</Title>
+        <RightContent>
+          <Day>{day}</Day>
           {technology.map(technologyItem => (
-            <span>{technologyItem}</span>
+            <Technology>{technologyItem}</Technology>
           ))}
           {visibleTime.map(time => (
-            <span>{time}</span>
+            <Time>{time}</Time>
           ))}
-        </div>
-      </div>
+        </RightContent>
+      </RightSection>
     </Wrapper>
   );
 };
