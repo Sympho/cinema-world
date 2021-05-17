@@ -8,6 +8,9 @@ import {
   Day,
   Technology,
   Time,
+  RightSubContent,
+  TechnologyContainer,
+  TimeContainer,
 } from './styled';
 import { GalleryItemProps } from './types';
 
@@ -25,12 +28,18 @@ const GalleryItem: FC<GalleryItemProps> = ({
         <Title>{title}</Title>
         <RightContent>
           <Day>{day}</Day>
-          {technology.map(technologyItem => (
-            <Technology>{technologyItem}</Technology>
-          ))}
-          {visibleTime.map(time => (
-            <Time>{time}</Time>
-          ))}
+          <RightSubContent>
+            <TechnologyContainer>
+              {technology.map(technologyItem => (
+                <Technology>{technologyItem}</Technology>
+              ))}
+            </TechnologyContainer>
+            <TimeContainer>
+              {visibleTime.map(time => (
+                <Time>{time}</Time>
+              ))}
+            </TimeContainer>
+          </RightSubContent>
         </RightContent>
       </RightSection>
     </Wrapper>

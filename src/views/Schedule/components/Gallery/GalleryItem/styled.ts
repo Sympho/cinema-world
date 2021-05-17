@@ -5,7 +5,7 @@ export const Wrapper = styled.li`
   padding: 50px 30px;
   margin-bottom: 10px;
   min-height: 277px;
-  background-color: #f5f5f5;
+  background-color: #4b4b5d;
 `;
 
 export const RightSection = styled.div`
@@ -22,20 +22,57 @@ export const Title = styled.span`
 
 export const RightContent = styled.div`
   display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+`;
+
+export const RightSubContent = styled.div`
+  display: flex;
   margin-bottom: 20px;
 `;
 
 export const Day = styled.span`
   margin-bottom: 10px;
-  color: #252525;
+  //color: #252525;
+`;
+
+export const TechnologyContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  max-width: 145px;
+  min-width: 120px;
+  text-transform: uppercase;
 `;
 
 export const Technology = styled.span`
+  margin: 5px 12px;
+  //color: #252525;
+`;
+
+export const TimeContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 10px;
-  color: #252525;
+  max-width: 340px;
+  width: 100%;
 `;
 
 export const Time = styled.span`
-  margin-bottom: 10px;
-  color: #252525;
+  cursor: pointer;
+  color: #000;
+  background-color: #3cb4e7;
+  border: 1px solid #3cb4e7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 28px;
+  margin: 5px 12px;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 14px;
+  //color: #252525;
 `;
