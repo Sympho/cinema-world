@@ -17,6 +17,7 @@ export const RightSection = styled.div`
 export const Title = styled.span`
   color: #3cb4e7;
   font-weight: 600;
+  font-size: 18px;
   cursor: pointer;
 `;
 
@@ -32,7 +33,7 @@ export const RightSubContent = styled.div`
 `;
 
 export const Day = styled.span`
-  margin-bottom: 10px;
+  margin: 10px 0;
   //color: #252525;
 `;
 
@@ -41,7 +42,7 @@ export const TechnologyContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 10px;
-  max-width: 145px;
+  max-width: 140px;
   min-width: 120px;
   text-transform: uppercase;
 `;
@@ -56,6 +57,7 @@ export const TimeContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 10px;
+  margin-left: 30px;
   max-width: 340px;
   width: 100%;
 `;
