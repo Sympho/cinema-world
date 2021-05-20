@@ -31,17 +31,16 @@ const Routes: FC<RouterProps> = ({ isAuth, lang }) => {
     <Switch>
       <Suspense fallback={<span>Loader...</span>}>
         {renderRoutes(publicRoutes)}
-
         {renderRoutes(profileRoutes, Comp => {
           return isAuth ? <Comp /> : <Redirect to={withLang(loginUrl, lang)} />;
         })}
         {renderRoutes(authRoutes, Comp => {
           return !isAuth ? <Comp /> : <Redirect to={withLang(profUrl, lang)} />;
         })}
-
-        <Route path={withLang('/*')} exact>
-          <NotFound />
-        </Route>
+        TODO Need to resolve this
+        {/*<Route path={withLang('/*')} exact>*/}
+        {/*  <NotFound />*/}
+        {/*</Route>*/}
       </Suspense>
     </Switch>
   );
