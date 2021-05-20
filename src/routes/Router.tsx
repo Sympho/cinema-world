@@ -21,7 +21,11 @@ const renderRoutes = (
 ) => {
   return routes.map(({ path, componentPath, ...params }) => (
     <Route key={withLang(path)} path={withLang(path)} {...params}>
-      <App>{renderComponent(lazy(() => import(`../${componentPath}`)))}</App>
+      <App>
+        <Suspense fallback={<span>Loader...</span>}>
+          {renderComponent(lazy(() => import(`../${componentPath}`)))}
+        </Suspense>
+      </App>
     </Route>
   ));
 };
@@ -29,19 +33,17 @@ const renderRoutes = (
 const Routes: FC<RouterProps> = ({ isAuth, lang }) => {
   return (
     <Switch>
-      <Suspense fallback={<span>Loader...</span>}>
-        {renderRoutes(publicRoutes)}
-        {renderRoutes(profileRoutes, Comp => {
-          return isAuth ? <Comp /> : <Redirect to={withLang(loginUrl, lang)} />;
-        })}
-        {renderRoutes(authRoutes, Comp => {
-          return !isAuth ? <Comp /> : <Redirect to={withLang(profUrl, lang)} />;
-        })}
-        TODO Need to resolve this
-        {/*<Route path={withLang('/*')} exact>*/}
-        {/*  <NotFound />*/}
-        {/*</Route>*/}
-      </Suspense>
+      {renderRoutes(publicRoutes)}
+      {renderRoutes(profileRoutes, Comp => {
+        return isAuth ? <Comp /> : <Redirect to={withLang(loginUrl, lang)} />;
+      })}
+      {renderRoutes(authRoutes, Comp => {
+        return !isAuth ? <Comp /> : <Redirect to={withLang(profUrl, lang)} />;
+      })}
+
+      <Route path={withLang('/*')} exact>
+        <NotFound />
+      </Route>
     </Switch>
   );
 };
