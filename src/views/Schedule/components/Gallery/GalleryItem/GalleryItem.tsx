@@ -31,12 +31,12 @@ const GalleryItem: FC<GalleryItemProps> = ({
           <RightSubContent>
             <TechnologyContainer>
               {technology.map(technologyItem => (
-                <Technology>{technologyItem}</Technology>
+                <Technology key={technologyItem}>{technologyItem}</Technology>
               ))}
             </TechnologyContainer>
             <TimeContainer>
               {visibleTime.map(time => (
-                <Time>{time}</Time>
+                <Time key={time}>{time}</Time>
               ))}
             </TimeContainer>
           </RightSubContent>
