@@ -18,6 +18,11 @@ const technologyData = [
   { title: `RE'LUX`, value: 'relux' },
 ];
 
+const formatData = [
+  { title: '2D', value: '2D' },
+  { title: '3D', value: '3D' },
+];
+
 const FilteredSection: FC<FilteredSectionProps> = () => {
   return (
     <Wrapper>
@@ -45,7 +50,15 @@ const FilteredSection: FC<FilteredSectionProps> = () => {
         ))}
       </div>
 
-      <span>Format</span>
+      <div>
+        <Title>Format</Title>
+        {formatData.map(format => (
+          <div key={format.title}>
+            <Checkbox checked={!!format.value} handleChange={() => {}} />
+            <span>{format.title}</span>
+          </div>
+        ))}
+      </div>
       <span>Another</span>
     </Wrapper>
   );
