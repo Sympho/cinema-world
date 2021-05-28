@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { useState, FC } from 'react';
 
 import Checkbox from 'shared/components/CheckBox';
 import { Wrapper, Title } from './styled';
@@ -6,17 +6,24 @@ import { periodData, formatData, technologyData } from './data';
 import { FilteredSectionProps } from './types';
 
 const FilteredSection: FC<FilteredSectionProps> = () => {
+  const [value, setVale] = useState<boolean>(false);
+
+  const handleChange = (checked: boolean) => setVale(!checked);
+
   return (
     <Wrapper>
       <Title>
-        <span>Filter Icon </span>
+        <span>Filter Icon</span>
         Filter Section
       </Title>
       <div>
         <Title>Period</Title>
         {periodData.map(period => (
           <div key={period.title}>
-            <Checkbox checked={!!period.value} handleChange={() => {}} />
+            <Checkbox
+              checked={value}
+              handleChange={() => handleChange(!!period.value)}
+            />
             <span>{period.title}</span>
           </div>
         ))}
