@@ -14,7 +14,11 @@ const FilteredSection: FC<FilteredSectionProps> = () => {
     <Wrapper>
       <Title>
         <span>Filter Icon</span>
-        Filter Section
+        Filter Section Title
+      </Title>
+      <Title>
+        <span>Filter Icon</span>
+        Filter Section Title
       </Title>
       <div>
         <Title>Period</Title>
