@@ -1,1 +1,1 @@
-export type FilteredSectionProps = {};
+export type TFilteredSectionProps = {};

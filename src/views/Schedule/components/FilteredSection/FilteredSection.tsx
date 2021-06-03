@@ -3,9 +3,9 @@ import { useState, FC } from 'react';
 import Checkbox from 'shared/components/CheckBox';
 import { Wrapper, Title } from './styled';
 import { periodData, formatData, technologyData } from './data';
-import { FilteredSectionProps } from './types';
+import { TFilteredSectionProps } from './types';
 
-const FilteredSection: FC<FilteredSectionProps> = () => {
+const FilteredSection: FC<TFilteredSectionProps> = () => {
   const [value, setVale] = useState<boolean>(false);
 
   const handleChange = (checked: boolean) => setVale(!checked);
@@ -32,27 +32,32 @@ const FilteredSection: FC<FilteredSectionProps> = () => {
           </div>
         ))}
       </div>
-
       <div>
         <Title>Technology</Title>
-        {technologyData.map(period => (
-          <div key={period.title}>
-            <Checkbox checked={!!period.value} handleChange={() => {}} />
-            <span>{period.title}</span>
+        {technologyData.map(technology => (
+          <div key={technology.title}>
+            <Checkbox
+              checked={!!technology.value}
+              handleChange={() => handleChange(!!technology.value)}
+            />
+            <span>{technology.title}</span>
           </div>
         ))}
       </div>
-
       <div>
         <Title>Format</Title>
         {formatData.map(format => (
           <div key={format.title}>
-            <Checkbox checked={!!format.value} handleChange={() => {}} />
+            <Checkbox
+              checked={!!format.value}
+              handleChange={() => handleChange(!!format.value)}
+            />
             <span>{format.title}</span>
           </div>
         ))}
       </div>
       <span>Another</span>
+      Something what u want to add
     </Wrapper>
   );
 };
