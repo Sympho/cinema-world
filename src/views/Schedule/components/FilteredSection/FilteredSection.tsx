@@ -6,16 +6,12 @@ import { periodData, formatData, technologyData } from './data';
 import { TFilteredSectionProps } from './types';
 
 const FilteredSection: FC<TFilteredSectionProps> = () => {
-  const [value, setVale] = useState<boolean>(false);
+  const [value, setValue] = useState<boolean>(false);
 
-  const handleChange = (checked: boolean) => setVale(!checked);
+  const handleChange = (checked: boolean) => setValue(!checked);
 
   return (
     <Wrapper>
-      <Title>
-        <span>Filter Icon</span>
-        Filter Section Title
-      </Title>
       <Title>
         <span>Filter Icon</span>
         Filter Section Title
