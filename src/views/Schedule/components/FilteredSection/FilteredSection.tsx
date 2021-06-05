@@ -16,10 +16,6 @@ const FilteredSection: FC<TFilteredSectionProps> = () => {
         <span>Filter Icon</span>
         Filter Section Title
       </Title>
-      <Title>
-        <span>Filter Icon</span>
-        Filter Section Title
-      </Title>
       <div>
         <Title>Period</Title>
         {periodData.map(period => (
