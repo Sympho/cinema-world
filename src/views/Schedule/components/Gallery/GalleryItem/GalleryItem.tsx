@@ -11,6 +11,7 @@ import {
   RightSubContent,
   TechnologyContainer,
   TimeContainer,
+  Img,
 } from './styled';
 import { GalleryItemProps } from './types';
 
@@ -23,7 +24,7 @@ const GalleryItem: FC<GalleryItemProps> = ({
 }) => {
   return (
     <Wrapper>
-      <div>{img}</div>
+      <Img>{img}</Img>
       <RightSection>
         <Title>{title}</Title>
         <RightContent>

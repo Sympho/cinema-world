@@ -78,3 +78,9 @@ export const Time = styled.span`
   font-size: 14px;
   //color: #252525;
 `;
+
+export const Img = styled.div`
+  max-width: 240px;
+  border-radius: 2px;
+  border: 1px solid #3cb4e7;
+`;
