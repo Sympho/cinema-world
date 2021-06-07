@@ -81,6 +81,7 @@ export const Time = styled.span`
 
 export const Img = styled.div`
   max-width: 240px;
+  width: 100%;
   border-radius: 2px;
   border: 1px solid #3cb4e7;
 `;
