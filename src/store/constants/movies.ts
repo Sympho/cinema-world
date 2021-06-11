@@ -53,6 +53,24 @@ const movies = [
       'https://3dnews.ru/assets/external/illustrations/2020/11/25/1026319/MARVELS_AVENGERS.jpg',
     title: 'Black mirror',
   },
+  {
+    id: 7,
+    image:
+      'https://3dnews.ru/assets/external/illustrations/2020/11/25/1026319/MARVELS_AVENGERS.jpg',
+    isComplete: true,
+    imageBg:
+      'https://3dnews.ru/assets/external/illustrations/2020/11/25/1026319/MARVELS_AVENGERS.jpg',
+    title: 'Black mirror',
+  },
+  {
+    id: 8,
+    image:
+      'https://3dnews.ru/assets/external/illustrations/2020/11/25/1026319/MARVELS_AVENGERS.jpg',
+    isComplete: true,
+    imageBg:
+      'https://3dnews.ru/assets/external/illustrations/2020/11/25/1026319/MARVELS_AVENGERS.jpg',
+    title: 'Black mirror',
+  },
 ];
 
 export default movies;

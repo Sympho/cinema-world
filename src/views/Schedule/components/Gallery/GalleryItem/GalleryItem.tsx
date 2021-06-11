@@ -29,7 +29,6 @@ const GalleryItem: FC<GalleryItemProps> = ({
         <Title>{title}</Title>
         <RightContent>
           <Day>{day}</Day>
-          <Day>{day}</Day>
           <RightSubContent>
             <TechnologyContainer>
               {technology.map(technologyItem => (

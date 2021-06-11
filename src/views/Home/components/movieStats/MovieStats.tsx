@@ -10,9 +10,11 @@ const MovieStats: FC = () => {
     totalWatchedNum,
     totalUnwatchedNum,
     percentWatched,
+    percentUnWatched,
   } = useRecoilValue(movieStatsState);
 
   const formattedPercentWatched = Math.round(percentWatched);
+  const formattedPercentUnWatched = Math.round(percentUnWatched);
 
   return (
     <StatsContainer>
@@ -28,6 +30,9 @@ const MovieStats: FC = () => {
         </li>
         <li>
           Percent already watched: <Text>{formattedPercentWatched}%</Text>
+        </li>
+        <li>
+          Percent unwatched: <Text>{formattedPercentUnWatched}%</Text>
         </li>
       </ul>
     </StatsContainer>

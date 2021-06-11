@@ -11,12 +11,14 @@ export const movieStatsState = selector({
     const totalUnwatchedNum = totalNum - totalWatchedNum;
     const percentWatched =
       totalNum === 0 ? 0 : (totalWatchedNum / totalNum) * 100;
+    const percentUnWatched = 100 - percentWatched;
 
     return {
       totalNum,
       totalWatchedNum,
       totalUnwatchedNum,
       percentWatched,
+      percentUnWatched,
     };
   },
 });
