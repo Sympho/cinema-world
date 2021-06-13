@@ -18,6 +18,7 @@ const MovieStats: FC = () => {
 
   return (
     <StatsContainer>
+      <span>Movies Statistics</span>
       <ul>
         <li>
           Total movies: <Text>{totalNum}</Text>
