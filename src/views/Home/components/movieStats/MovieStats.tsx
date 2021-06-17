@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import { movieStatsState } from 'store/selectors';
-import { StatsContainer, Text } from './styled';
+import { StatsContainer, Text, Title } from './styled';
 
 const MovieStats: FC = () => {
   const {
@@ -18,7 +18,7 @@ const MovieStats: FC = () => {
 
   return (
     <StatsContainer>
-      <span>Movies Statistics</span>
+      <Title>Movies Statistics</Title>
       <ul>
         <li>
           Total movies: <Text>{totalNum}</Text>
