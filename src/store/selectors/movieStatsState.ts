@@ -12,6 +12,7 @@ export const movieStatsState = selector({
     const percentWatched =
       totalNum === 0 ? 0 : (totalWatchedNum / totalNum) * 100;
     const percentUnWatched = 100 - percentWatched;
+    const percentAll = 100 + percentWatched;
 
     return {
       totalNum,
@@ -19,6 +20,7 @@ export const movieStatsState = selector({
       totalUnwatchedNum,
       percentWatched,
       percentUnWatched,
+      percentAll,
     };
   },
 });
