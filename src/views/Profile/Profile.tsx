@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import Page from 'shared/components/Page';
-import { Container, LeftSide, RightSide } from './styled';
+import { Container, LeftSide, RightSide } from './style';
 
 const Profile: FC = () => {
   return (

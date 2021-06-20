@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { StyledButtonProps } from './types';
+import { ButtonProps } from './types';
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -36,7 +36,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     `}
 `;
 
-export const StyledText = styled.span<StyledButtonProps>`
+export const StyledText = styled.span<ButtonProps>`
   display: block;
   transform: translate(0, 0);
   transition: transform 0.2s;
@@ -57,7 +57,7 @@ const rotate = keyframes`
   }
 `;
 
-export const StyledLoader = styled.i<StyledButtonProps>`
+export const StyledLoader = styled.i<ButtonProps>`
   display: block;
   position: absolute;
   width: 18px;

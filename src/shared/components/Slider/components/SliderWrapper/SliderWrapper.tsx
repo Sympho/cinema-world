@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Wrapper } from './styled';
+import { Wrapper } from './style';
 import { SliderWrapperProps } from './types';
 
 const SliderWrapper: FC<SliderWrapperProps> = ({ children }) => (

@@ -8,7 +8,7 @@ import {
   StyledInput,
   StyledTextarea,
   StyledSelect,
-} from './styled';
+} from './style';
 
 import { InputProps } from './types';
 

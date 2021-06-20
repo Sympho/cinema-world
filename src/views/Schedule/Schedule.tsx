@@ -3,7 +3,7 @@ import { FC } from 'react';
 import Page from 'shared/components/Page';
 import FilteredSection from './components/FilteredSection';
 import Gallery from './components/Gallery';
-import { ScheduleContainer, Info, Title, Content } from './styled';
+import { ScheduleContainer, Info, Title, Content } from './style';
 import { ScheduleProps } from './types';
 
 const Schedule: FC<ScheduleProps> = () => {

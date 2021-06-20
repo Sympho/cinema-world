@@ -1,8 +1,9 @@
 import { useState, FC } from 'react';
 
 import Checkbox from 'shared/components/CheckBox';
-import { Wrapper, Title } from './styled';
+
 import { periodData, formatData, technologyData } from './data';
+import { Wrapper, Title } from './style';
 import { TFilteredSectionProps } from './types';
 
 const FilteredSection: FC<TFilteredSectionProps> = () => {

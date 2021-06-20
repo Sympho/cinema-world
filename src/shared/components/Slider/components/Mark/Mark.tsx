@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { MarkWrapper } from './styled';
+import { MarkWrapper } from './style';
 
 const Mark: FC = () => <MarkWrapper />;
 

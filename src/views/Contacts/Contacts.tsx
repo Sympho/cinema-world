@@ -6,6 +6,8 @@ import Link from 'shared/components/Link';
 import Page from 'shared/components/Page';
 import Input from 'shared/components/Input';
 
+import { TitleLink } from './style';
+
 const Contacts: FC = () => {
   useEffect(() => {
     movies.getItems().then(res => {
@@ -14,9 +16,9 @@ const Contacts: FC = () => {
   }, []);
   return (
     <Page>
-      <p>
+      <TitleLink>
         <Link to="/auth">Auth</Link>
-      </p>
+      </TitleLink>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid

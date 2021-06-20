@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Link from 'shared/components/Link';
 
-import { Container, Main } from './StyledComponents';
+import { Container, Main } from './style';
 import { NotFoundProps } from './types';
 
 const NotFound: FC<NotFoundProps> = ({ text }) => {

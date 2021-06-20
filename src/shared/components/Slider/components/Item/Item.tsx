@@ -3,7 +3,7 @@ import { FC } from 'react';
 import SliderContext from 'shared/contexts/slider';
 import ShowDetailsButton from '../ShowDetailsButton';
 import Mark from '../Mark';
-import { Wrapper, Image } from './styled';
+import { Wrapper, Image } from './style';
 import { ItemProps } from './types';
 
 const Item: FC<ItemProps> = ({ movie }) => (

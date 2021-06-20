@@ -11,7 +11,7 @@ import {
   ContentTitle,
   ContentDescription,
   CloseContentButton,
-} from './styled';
+} from './style';
 import { ContentProps } from './types';
 
 const Content: FC<ContentProps> = ({ movie, onClose }) => (

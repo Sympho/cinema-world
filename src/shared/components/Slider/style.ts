@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { Btn } from 'shared/components/Slider/components/ShowDetailsButton/styled';
-import { Wrapper } from 'shared/components/Slider/components/Item/styled';
+import { Btn } from 'shared/components/Slider/components/ShowDetailsButton/style';
+import { Wrapper } from 'shared/components/Slider/components/Item/style';
+
 import { ContainerProps } from './types';
 
 export const Container = styled.div<ContainerProps>`

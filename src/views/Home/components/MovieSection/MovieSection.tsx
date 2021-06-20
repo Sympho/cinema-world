@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
-import { Wrapper, Title, Avatar } from './styled';
+import { Image } from 'shared/components/Slider/components/Item/style';
+
+import { Wrapper, Title, Avatar } from './style';
 import { MovieSectionType } from './types';
-import { Image } from 'shared/components/Slider/components/Item/styled';
 
 const Home: FC<MovieSectionType> = ({ movie }) => {
   return (

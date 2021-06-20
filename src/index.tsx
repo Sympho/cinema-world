@@ -4,13 +4,13 @@ import { RecoilRoot, useRecoilState } from 'recoil';
 
 import Router from 'routes/Router';
 import { AuthContext } from 'shared/contexts/auth';
-import { authState, loggedUserData } from 'store/atoms';
+import { authState } from 'store/atoms';
 
 import 'assets/css/index.css';
 
 const Root: FC = () => {
   const [isAuth, setAuth] = useRecoilState<boolean>(authState);
-  const [loggedUser, setLoggedUser] = useRecoilState(loggedUserData);
+  // const [loggedUser, setLoggedUser] = useRecoilState(loggedUserData);
 
   return (
     <AuthContext.Provider value={{ isAuth, setAuth }}>

@@ -1,3 +1,4 @@
-export type StyledButtonProps = {
+export type ButtonProps = {
   isLoading?: boolean;
+  isDisabled?: boolean;
 };

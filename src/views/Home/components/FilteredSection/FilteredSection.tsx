@@ -2,7 +2,7 @@ import { FC, ChangeEvent } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { movieFilterState } from 'store/atoms';
-import { FilteredContainer, FilterTitle, FilterSubTitle } from './styled';
+import { FilteredContainer, FilterTitle, FilterSubTitle } from './style';
 
 const FilteredSection: FC = () => {
   const [filter, setFilter] = useRecoilState(movieFilterState);

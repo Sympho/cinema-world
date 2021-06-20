@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import Link from 'shared/components/Link';
 import { AuthContext } from 'shared/contexts/auth';
 
-import { Container, Wrapper } from './StyledComponents';
+import { Container, Wrapper } from './style';
 
 const Header = () => {
   const { isAuth, setAuth } = useContext(AuthContext);
