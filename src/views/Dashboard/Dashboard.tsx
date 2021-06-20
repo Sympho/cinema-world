@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Container, Main } from './StyledComponents';
+import { Container, Main } from './style';
 import { DashBoardProps } from './types';
 
 const DashBoard: FC<DashBoardProps> = ({ text }) => {

@@ -1,11 +1,7 @@
 import { FC } from 'react';
 
-import { StyledButton, StyledText, StyledLoader } from './styled';
-
-type ButtonProps = {
-  isLoading?: boolean;
-  isDisabled?: boolean;
-};
+import { StyledButton, StyledText, StyledLoader } from './style';
+import { ButtonProps } from './types';
 
 const Button: FC<ButtonProps> = ({
   children,

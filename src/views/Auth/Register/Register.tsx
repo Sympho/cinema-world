@@ -17,6 +17,8 @@ const Register: FC = () => {
     '',
   );
 
+  console.log('accessToken', accessToken);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const submit = (event: SyntheticEvent, formData: FormData) => {

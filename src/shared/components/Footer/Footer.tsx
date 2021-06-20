@@ -1,4 +1,4 @@
-import { Container, Wrapper } from './StyledComponents';
+import { Container, Wrapper } from './style';
 
 const Footer = () => {
   return (

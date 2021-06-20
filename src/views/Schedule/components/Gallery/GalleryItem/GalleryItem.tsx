@@ -12,7 +12,7 @@ import {
   TechnologyContainer,
   TimeContainer,
   Img,
-} from './styled';
+} from './style';
 import { GalleryItemProps } from './types';
 
 const GalleryItem: FC<GalleryItemProps> = ({

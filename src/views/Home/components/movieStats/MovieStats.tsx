@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import { movieStatsState } from 'store/selectors';
-import { StatsContainer, Text, Title } from './styled';
+
+import { StatsContainer, Text, Title } from './style';
 
 const MovieStats: FC = () => {
   const {

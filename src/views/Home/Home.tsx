@@ -9,7 +9,7 @@ import FilteredSection from './components/FilteredSection';
 import Slider from 'shared/components/Slider';
 import Item from 'shared/components/Slider/components/Item';
 import MovieStats from './components/movieStats';
-import { Wrapper, Title, MovieContainer } from './styled';
+import { Wrapper, Title, MovieContainer } from './style';
 import { MovieType } from 'store/types';
 
 const Home: FC = () => {

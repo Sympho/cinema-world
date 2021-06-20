@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import IconArrowDown from 'shared/components/Icons/IconArrowDown';
-import { Btn } from './styled';
+import { Btn } from './style';
 import { BtnProps } from './types';
 
 const ShowDetailsButton: FC<BtnProps> = ({ onClick }) => (

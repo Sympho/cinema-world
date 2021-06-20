@@ -7,8 +7,9 @@ import SliderContext from 'shared/contexts/slider';
 import Content from './components/Content';
 import SlideButton from './components/SlideButton';
 import SliderWrapper from './components/SliderWrapper';
-import { Container, SliderContainer } from './styled';
 import { MovieType } from 'store/types';
+
+import { Container, SliderContainer } from './style';
 import { SliderProps } from './types';
 
 const Slider: FC<SliderProps> = ({ children, activeSlide }) => {
