@@ -26,7 +26,6 @@ const Input: FC<InputProps> = ({
 }) => {
   const id = outerId || uuidv4();
 
-  console.log(validate);
   const changeHandle = (event: ChangeEvent) => {
     const newValue = (event.target as HTMLInputElement).value;
     onChange(newValue, event, name);
