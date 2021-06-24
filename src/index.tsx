@@ -10,6 +10,7 @@ import 'assets/css/index.css';
 
 const Root: FC = () => {
   const [isAuth, setAuth] = useRecoilState<boolean>(authState);
+  // const [isAuth, setAuth] = useRecoilState<boolean>(authState);
   // const [loggedUser, setLoggedUser] = useRecoilState(loggedUserData);
 
   return (
