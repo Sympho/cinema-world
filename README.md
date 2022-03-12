@@ -21,7 +21,7 @@ Listening on [http://localhost:5000](http://localhost:5000)
 
 ### `yarn createTable %ModelName%`
 
-To create a new table in the database you should run `yarn createTable UserModel` (Be careful: this command drops table if it has been already created)
+To create a new table in the database you should run `yarn createTable UserModel` \ (Be careful: this command drops table if it has been already created)
 
 ### `yarn build`
 
